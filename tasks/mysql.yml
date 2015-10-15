@@ -1,0 +1,26 @@
+- name: install python-mysqldb
+  apt:
+    name: python-mysqldb
+    state: latest
+    force: yes
+
+- name: modify ~/.my.cnf
+  template:
+    src: mysql/my.cnf
+    dest: ~/.my.cnf
+    mode: 0600
+  when: "mysql.host != 'localhost'"
+
+- name: modify mysql database
+  mysql_db:
+    login_host: "{{ mysql.host }}"
+    name: "{{ mysql.database }}"
+    state: present
+
+- name: modify mysql user
+  mysql_user:
+    host: "{{ mysql.host }}"
+    name: "{{ mysql.user }}"
+    password: "{{ mysql.password }}"
+    priv: "{{ mysql.database }}.*:ALL"
+    state: present

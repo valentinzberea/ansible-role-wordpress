@@ -12,6 +12,17 @@
 - name: unzip wordpress
   unarchive:
     src: "/usr/local/src/wordpress-{{ version }}-ja.zip"
-    dest: /usr/local/src
-    creates: /usr/local/src/wordpress
+    dest: "{{ nginx.root }}"
+    creates: "{{ nginx.root }}/wordpress"
     copy: no
+
+- name: modify wp-config.php
+  template:
+    src: wp-config.php
+    dest: "{{ nginx.root }}/wordpress/wp-config.php"
+    owner: root
+    group: root
+    mode: 0644
+
+- include: nginx.yml
+- include: mysql.yml
