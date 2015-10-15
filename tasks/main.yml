@@ -1,0 +1,17 @@
+- name: install zip
+  apt:
+    name: zip
+    state: latest
+    force: yes
+
+- name: download wordpress
+  get_url:
+    url: "http://ja.wordpress.org/wordpress-{{ version }}-ja.zip"
+    dest: "/usr/local/src/wordpress-{{ version }}-ja.zip"
+
+- name: unzip wordpress
+  unarchive:
+    src: "/usr/local/src/wordpress-{{ version }}-ja.zip"
+    dest: /usr/local/src
+    creates: /usr/local/src/wordpress
+    copy: no
