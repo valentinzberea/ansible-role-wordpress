@@ -1,4 +1,4 @@
 dependencies:
   - { role: nginx }
   - { role: hhvm }
-  - { role: mariadb-server, when: "mysql.host == 'localhost'" }
+  - { role: mariadb-server, when: "wp_mysql_host == 'localhost'" }

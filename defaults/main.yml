@@ -1,11 +1,9 @@
-version: "4.3.1"
+wp_version: "4.3.1"
 
-nginx:
-  root: "/usr/share/nginx"
-  access_log: "/var/log/nginx/access.log"
+wp_nginx_root: /usr/share/nginx
+wp_nginx_accesslog: /var/log/nginx/wordpress-access.log
 
-mysql:
-  host: "localhost"
-  database: "wordpress"
-  user: "wordpress"
-  password: "wordpress"
+wp_mysql_host: localhost
+wp_mysql_database: wordpress
+wp_mysql_user: wordpress
+wp_mysql_password: wordpress

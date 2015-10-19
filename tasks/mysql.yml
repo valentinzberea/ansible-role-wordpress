@@ -9,18 +9,18 @@
     src: mysql/my.cnf
     dest: ~/.my.cnf
     mode: 0600
-  when: "mysql.host != 'localhost'"
+  when: "wp_mysql_host != 'localhost'"
 
 - name: modify mysql database
   mysql_db:
-    login_host: "{{ mysql.host }}"
-    name: "{{ mysql.database }}"
+    login_host: "{{ wp_mysql_host }}"
+    name: "{{ wp_mysql_database }}"
     state: present
 
 - name: modify mysql user
   mysql_user:
-    host: "{{ mysql.host }}"
-    name: "{{ mysql.user }}"
-    password: "{{ mysql.password }}"
-    priv: "{{ mysql.database }}.*:ALL"
+    host: "{{ wp_mysql_host }}"
+    name: "{{ wp_mysql_user }}"
+    password: "{{ wp_mysql_password }}"
+    priv: "{{ wp_mysql_database }}.*:ALL"
     state: present
