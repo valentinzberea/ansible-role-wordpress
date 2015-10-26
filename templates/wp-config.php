@@ -53,6 +53,9 @@ if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER
 define('WP_SITEURL', $protocol_to_use . $_SERVER['HTTP_HOST']);
 define('WP_HOME', $protocol_to_use . $_SERVER['HTTP_HOST']);
 
+// Multi Site
+define('WP_ALLOW_MULTISITE', {{ wp_allow_multisite }});
+
 /**#@+
  * 認証用ユニークキー
  *

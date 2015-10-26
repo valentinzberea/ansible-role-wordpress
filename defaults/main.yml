@@ -7,3 +7,5 @@ wp_mysql_host: localhost
 wp_mysql_database: wordpress
 wp_mysql_user: wordpress
 wp_mysql_password: wordpress
+
+wp_allow_multisite: "false"
