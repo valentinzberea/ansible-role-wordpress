@@ -1,7 +1,7 @@
 wp_version: "4.3.1"
 
-wp_owner: www-data
-wp_group: www-data
+wp_owner: nginx
+wp_group: nginx
 
 wp_nginx_root: /usr/share/nginx
 wp_nginx_accesslog: /var/log/nginx/wordpress-access.log
