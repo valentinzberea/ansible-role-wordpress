@@ -43,6 +43,16 @@ define('DB_CHARSET', 'utf8');
 /** データベースの照合順序 (ほとんどの場合変更する必要はありません) */
 define('DB_COLLATE', '');
 
+// Determine HTTP or HTTPS, then set WP_SITEURL and WP_HOME
+if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443)
+{
+    $protocol_to_use = 'https://';
+} else {
+    $protocol_to_use = 'http://';
+}
+define('WP_SITEURL', $protocol_to_use . $_SERVER['HTTP_HOST']);
+define('WP_HOME', $protocol_to_use . $_SERVER['HTTP_HOST']);
+
 /**#@+
  * 認証用ユニークキー
  *
