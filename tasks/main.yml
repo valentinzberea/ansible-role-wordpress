@@ -14,14 +14,16 @@
     src: "/usr/local/src/wordpress-{{ wp_version }}-ja.zip"
     dest: "{{ wp_nginx_root }}"
     creates: "{{ wp_nginx_root }}/wordpress"
+    owner: nginx
+    group: nginx
     copy: no
 
 - name: modify wp-config.php
   template:
     src: wp-config.php
     dest: "{{ wp_nginx_root }}/wordpress/wp-config.php"
-    owner: root
-    group: root
+    owner: nginx
+    group: nginx
     mode: 0644
 
 - include: nginx.yml
