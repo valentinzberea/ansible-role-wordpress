@@ -1,6 +1,6 @@
 wp_version: "4.3.1"
 
-wp_owner: nginx
+wp_owner: www-data # HHVM
 wp_group: nginx
 
 wp_nginx_root: /usr/share/nginx
