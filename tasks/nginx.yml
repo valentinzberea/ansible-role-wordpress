@@ -1,3 +1,12 @@
+- name: modify ssl crt
+  sudo: yes
+  copy:
+    src: ssl
+    dest: /etc/nginx
+    owner: root
+    group: root
+    mode: 0755
+
 - name: modify nginx config
   template:
     src: nginx/wordpress.conf
