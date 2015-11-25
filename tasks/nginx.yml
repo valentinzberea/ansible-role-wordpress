@@ -1,5 +1,4 @@
 - name: modify ssl crt
-  sudo: yes
   copy:
     src: ssl
     dest: /etc/nginx
