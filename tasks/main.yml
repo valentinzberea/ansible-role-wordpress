@@ -1,6 +1,6 @@
-- name: install zip
+- name: install unzip
   apt:
-    name: zip
+    name: unzip
     state: latest
     force: yes
 

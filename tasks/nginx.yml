@@ -1,11 +1,3 @@
-- name: modify ssl crt
-  copy:
-    src: ssl
-    dest: /etc/nginx
-    owner: root
-    group: root
-    mode: 0755
-
 - name: modify nginx config
   template:
     src: nginx/wordpress.conf

@@ -1,5 +1,5 @@
 # README.md
-# Ansible Role: wordpress
+# Ansible Role: mats116.wordpress
 
 An Ansible role that installs WordPress (with Nginx & HHVM) on **Ubuntu 14.04 LTS**
 
