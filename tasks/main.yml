@@ -14,7 +14,7 @@
   
 - name: unzip wordpress
   unarchive:
-    src: "/usr/local/src/wordpress-{{ wp_version }}-ja.zip"
+    src: "/usr/local/src/wordpress-{{ wp_version }}.zip"
     dest: "{{ wp_nginx_root }}"
     creates: "{{ wp_nginx_root }}/wordpress"
     owner: "{{ wp_owner }}"
