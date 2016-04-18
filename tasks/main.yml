@@ -9,6 +9,9 @@
     url: "http://ja.wordpress.org/wordpress-{{ wp_version }}-ja.zip"
     dest: "/usr/local/src/wordpress-{{ wp_version }}-ja.zip"
 
+- name: ensure wordpress target directory exists
+  file: path="{{ wp_nginx_root }}" state=directory mode=0755
+  
 - name: unzip wordpress
   unarchive:
     src: "/usr/local/src/wordpress-{{ wp_version }}-ja.zip"
