@@ -13,5 +13,5 @@ galaxy_info:
     - wordpress
 dependencies:
   - { role: mats116.nginx }
-  - { role: mats116.hhvm }
+  - { role: https://github.com/valentinzberea/ansible-role-hhvm }
   - { role: mats116.mariadb-server, when: "wp_mysql_host == 'localhost'" }
