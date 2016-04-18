@@ -6,8 +6,8 @@
 
 - name: download wordpress
   get_url:
-    url: "http://ja.wordpress.org/wordpress-{{ wp_version }}-ja.zip"
-    dest: "/usr/local/src/wordpress-{{ wp_version }}-ja.zip"
+    url: "http://wordpress.org/wordpress-{{ wp_version }}.zip"
+    dest: "/usr/local/src/wordpress-{{ wp_version }}.zip"
 
 - name: ensure wordpress target directory exists
   file: path="{{ wp_nginx_root }}" state=directory mode=0755
